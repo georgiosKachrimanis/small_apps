@@ -2,6 +2,7 @@ from tkinter import *
 from tkinter import messagebox
 from random import randint, shuffle, choice
 import pyperclip
+import json
 
 
 
@@ -35,23 +36,54 @@ def password_generator():
 
 def save_logins():
     website = website_entry.get()
-    username = username_entry.get()
+    username = email.get() # This is usually the email of the user.
     password = password_entry.get()
+    new_data = {
+        website: {
+            "email": username,
+            "password": password,     
+        }      
+    }
 
     if len(website) == 0 or len(password) == 0:
         messagebox.showerror(title="Empty Field", message="Please check the information you provided, either website of password is empty!")
-    
     else:
-        
-        is_ok = messagebox.askokcancel(title="Confirmation", message=f"Do you want to add the Password:{password} for the Website: {website}")
+        try:
+            with open('panager/p422_w0r6.json', 'r') as data_file:
+                data = json.load(data_file)          
+        except FileNotFoundError:
+            with open('panager/p422_w0r6.json', 'w') as data_file:
+                json.dump(new_data, data_file, indent=4)   
+        else:
+            data.update(new_data)
+            with open('panager/p422_w0r6.json', 'w') as data_file:
+                json.dump(data, data_file, indent=4)
+        finally:        
+            website_entry.delete(0, END)
+            password_entry.delete(0, END)
 
-        if is_ok:
-            with open('p422_w0r6.txt', 'a') as file:
-                file.write(f"|| Website: {website} | Username: {username}| Password: {password} ||\n")
-                website_entry.delete(0, END)
-                password_entry.delete(0, END)
+def find_password():
+    website = website_entry.get() 
     
+    if len(website) == 0:
+        messagebox.showerror(title="Empty Field", message="Please check the information you provided, the field is empty!")
+    else:
+        try:
+            with open('panager/p422_w0r6.json', 'r') as data_file:
+                data = json.load(data_file)
+                
+        except FileNotFoundError:
+            messagebox.showerror(title="Empty Field", message="No Data file found")
+        else:
+            if website in data:
+                    website_email = data[website]['email']
+                    website_password = data[website]['password']
+                    messagebox.showinfo(title=website, message=f"The Username is: {website_email}\nThe password is: {website_password}")
+            else:
+                messagebox.showerror(title="No Account", message=f"No Account for {website} Found")
+            website_entry.delete(0, END)
 
+# ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
 
@@ -68,17 +100,20 @@ canvas.grid(row=0, column=1)
 website_label = Label(text="Website:", bg= "white", font=("Courier"), foreground="black", width=20, anchor="e", pady=2)
 website_label.grid(row=1, column=0)
 
-website_entry = Entry(width=40, bg="white", borderwidth=1, highlightthickness=1, foreground="darkblue")
-website_entry.grid(row=1, column=1, columnspan=2, pady=2)
+website_entry = Entry(width=22, bg="white", borderwidth=1, highlightthickness=1, foreground="darkblue")
+website_entry.grid(row=1, column=1, columnspan=1, pady=2)
 website_entry.focus()
 
+# Search Button
+search_button = Button(text="Search", borderwidth=0, highlightthickness=1, width=14, pady=2, command=find_password)
+search_button.grid(row=1, column=2, columnspan=1)
 # Email/Username Label and Entry
-username_label = Label(text="Email/Username:", bg= "white", font=("Courier"), foreground="black", width=20, anchor="e", pady=2)
-username_label.grid(row=2, column=0)
+email_label = Label(text="Email/Username:", bg= "white", font=("Courier"), foreground="black", width=20, anchor="e", pady=2)
+email_label.grid(row=2, column=0)
 
-username_entry = Entry(width=40, bg="white", borderwidth=1, highlightthickness=1, fg="darkblue")
-username_entry.grid(row=2, column=1, columnspan=2, pady=2)
-username_entry.insert(0, "enter@your_email.here")
+email = Entry(width=40, bg="white", borderwidth=1, highlightthickness=1, fg="darkblue")
+email.grid(row=2, column=1, columnspan=2, pady=2)
+email.insert(0, "enter@your_email.here")
 
 # Password Label and Entry
 password_label = Label(text="Password:", bg= "white", font=("Courier"), foreground="black", width=20, anchor="e", pady=2)
