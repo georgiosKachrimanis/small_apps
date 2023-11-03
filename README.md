@@ -11,6 +11,8 @@ This is a collection of small fun apps that I will be creating to improve my ski
 
 # Flash Cards Application 
 
+I created this app, because I am really bad at learning languages. I hope it will help you as much as it helped me!
+
 [WordCart](/wordcard/README.MD)
 
 

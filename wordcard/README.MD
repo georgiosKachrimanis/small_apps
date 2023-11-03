@@ -1,6 +1,6 @@
 # Flash Cards Application (WordCard)
 
-A simple flashcards application built using `tkinter` for GUI and `pandas` for data handling. The application displays flashcards with words from one language on one side and their translations on the other.
+A simple flashcards application built using `tkinter` for GUI and `pandas` for data handling. The application displays flashcards with words from one language on one side and their translations on the other. I created this app, because I am really bad at learning languages. I hope it will help you as much as it helped me!
 
 ## Features:
 
