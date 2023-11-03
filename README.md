@@ -9,5 +9,9 @@ This is going to be a repo with some small fun apps that I will be creating to i
 
 [pamanager](/panager/Readme.md)
 
+# Flash Cards Application 
+
+[WordCart](/wordcard/README.MD)
+
 
 
