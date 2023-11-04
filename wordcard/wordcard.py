@@ -6,10 +6,10 @@ BACKGROUND_COLOR = "#B1DDC6"
 FILL_COLOR = "#0C356A"
 
 try:
-    df = pd.read_csv("day_31/data/words_need_to_learn.csv")
+    df = pd.read_csv("wordcard/data/words_need_to_learn.csv")
     print("Using the new file!")
 except FileNotFoundError:
-    df = pd.read_csv("day_31/data/Nederalnds_English_5k.csv")
+    df = pd.read_csv("wordcard/data/Nederalnds_English_5k.csv")
     
 word_dictionary = df.to_dict(orient="records")
 
@@ -37,7 +37,7 @@ def answer_card():
 def is_known():
     word_dictionary.remove(current_card)
     df = pd.DataFrame(word_dictionary)
-    df.to_csv("day_31/data/words_need_to_learn.csv", index=False)
+    df.to_csv("wordcard/data/words_need_to_learn.csv", index=False)
     next_card()
    
 
@@ -53,8 +53,8 @@ flip_timer =  window.after(3000, func=answer_card)
 
 #Card image 
 card = Canvas(width=800, height=526, bg=BACKGROUND_COLOR, highlightthickness=0)
-front_img = PhotoImage(file="day_31/images/card_front.png")
-back_img =  PhotoImage(file="day_31/images/card_back.png")
+front_img = PhotoImage(file="wordcard/images/card_front.png")
+back_img =  PhotoImage(file="wordcard/images/card_back.png")
 card_image = card.create_image(400, 263, image=front_img) # We will manipulate this image depending if we have the question or the answer.
 # Image Text (Title)
 card_title = card.create_text(400, 150, text="", fill=FILL_COLOR, font=("Ariel", 40, "italic")) 
@@ -64,11 +64,11 @@ card_word = card.create_text(400, 263, text="", fill=FILL_COLOR, font=("Ariel", 
 card.grid(row=0, column=0, columnspan=2)
 
 # Buttons
-not_known_word_img = PhotoImage(file="day_31/images/wrong.png")
+not_known_word_img = PhotoImage(file="wordcard/images/wrong.png")
 not_known_word = Button(image=not_known_word_img, highlightthickness=0, borderwidth=0, command=next_card)
 not_known_word.grid(row=1, column=0, padx=10, pady=10)
 
-known_word_img = PhotoImage(file="day_31/images/right.png")
+known_word_img = PhotoImage(file="wordcard/images/right.png")
 known_word = Button(image=known_word_img, highlightthickness=0, borderwidth=0, command=is_known )
 known_word.grid(row=1, column=1,  padx=10, pady=10)
 
