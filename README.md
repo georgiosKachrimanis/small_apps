@@ -15,5 +15,10 @@ I created this app, because I am really bad at learning languages. I hope it wil
 
 [WordCart](/wordcard/README.MD)
 
+# Birthday Email Sender
+
+A simple Python application to automatically send birthday wishes via email to individuals whose birthdays are listed in a CSV file.
+
+[Biemsend](/birthday_app/README.MD)
 
 
