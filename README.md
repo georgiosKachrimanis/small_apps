@@ -22,3 +22,9 @@ A simple Python application to automatically send birthday wishes via email to i
 [Biemsend](/birthday_app/README.MD)
 
 
+# Rainapp
+
+A fun small app that will send you a text message if there is going to be rainy at your area!
+
+[Rainapp](/rainapp/README.MD)
+
