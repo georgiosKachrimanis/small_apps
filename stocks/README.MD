@@ -21,5 +21,44 @@ This repository contains a Python application designed to monitor stock price ch
 ## Setup
 
 1. **Clone the repository:**
-git clone https://github.com//stock-news-alert.git
-cd stock-news-alert
+`git clone https://github.com/georgiosKachrimanis/small_apps/tree/main/stocks`
+
+
+2. **Install dependencies:**
+`pip install requests twillio`
+
+
+3. **Set Environment Variables:**
+- Set the following environment variables with the respective API keys and Twilio account details:
+  - `ALPHA_VANTAGE_API`: Your Alpha Vantage API key.
+  - `NEWS_API_KEY`: Your News API key.
+  - `TWILIO_ACCOUNT_SID`: Your Twilio Account SID.
+  - `TWILIO_AUTH_TOKEN`: Your Twilio Auth Token.
+  - `TWILIO_NUMBER`: Your Twilio phone number.
+  - `MY_NUMBER`: The phone number to receive the alerts.
+
+4. **Run the application:**
+
+`python3 stocks.py`
+
+
+## Usage
+
+The application checks the latest stock price of Tesla Inc and compares it with the previous day's price. If the change is significant (more than 5% by default), it fetches the latest news articles related to Tesla Inc and sends an SMS alert with the news information.
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit pull requests, create issues, or provide feedback.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## Contact
+
+- Your Name - [your-email@example.com](mailto:your-email@example.com)
+- Project Link: [https://github.com/yourusername/stocks](https://github.com/yourusername/stock-news-alert)
+
+---
+
+> Note: This application is for educational purposes only. Always ensure compliance with the APIs' terms of use and avoid sharing sensitive personal information.
