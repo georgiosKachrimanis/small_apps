@@ -21,8 +21,8 @@ This repository contains a Python application designed to monitor stock price ch
 ## Setup
 
 1. **Clone the repository:**
-`git clone https://github.com/georgiosKachrimanis/small_apps/tree/main/stocks`
-
+`git clone https://github.com/georgiosKachrimanis/small_apps.git`
+`cd stocks`
 
 2. **Install dependencies:**
 `pip install requests twillio`
@@ -46,18 +46,17 @@ This repository contains a Python application designed to monitor stock price ch
 
 The application checks the latest stock price of Tesla Inc and compares it with the previous day's price. If the change is significant (more than 5% by default), it fetches the latest news articles related to Tesla Inc and sends an SMS alert with the news information.
 
+If you want to check another stock, ou can just change the name of the company and stock!
+
 ## Contributing
 
 Contributions are welcome! Please feel free to submit pull requests, create issues, or provide feedback.
 
-## License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## Contact
 
-- Your Name - [your-email@example.com](mailto:your-email@example.com)
-- Project Link: [https://github.com/yourusername/stocks](https://github.com/yourusername/stock-news-alert)
+- Try to find me in LinkedIn if you want to contact me!
+- Project Link: [https://github.com/georgiosKachrimanis/small_apps](https://github.com/georgiosKachrimanis/small_apps)
 
 ---
 

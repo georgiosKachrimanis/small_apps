@@ -3,8 +3,8 @@ import requests
 import os
 from twilio.rest import Client
 
-STOCK_NAME = "TSLA"
-COMPANY_NAME = "Tesla Inc"
+STOCK_NAME = "TSLA" # Change the stock name here!
+COMPANY_NAME = "Tesla Inc" # Change the company name here!
 
 STOCK_ENDPOINT = "https://www.alphavantage.co/query"
 NEWS_ENDPOINT = "https://newsapi.org/v2/everything"
