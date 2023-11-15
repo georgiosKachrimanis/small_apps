@@ -28,3 +28,13 @@ A fun small app that will send you a text message if there is going to be rainy 
 
 [Rainapp](/rainapp/README.MD)
 
+# Nutriapp
+
+This is an app using [nutritionix api](https://www.nutritionix.com/business/api) in order to add your exercise data in a google sheet. You can use natural language to explain what you did.
+For example:
+
+`I run 30 mins and walked 1 hour.`
+
+This will create 2 entries in the sheet. One will be Running 30 mins with x amount of calories and the second will be Walking 60 minutes with y amount of calories!
+
+
