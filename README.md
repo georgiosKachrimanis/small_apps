@@ -37,4 +37,5 @@ For example:
 
 This will create 2 entries in the sheet. One will be Running 30 mins with x amount of calories and the second will be Walking 60 minutes with y amount of calories!
 
+[Nutriapp](/nutriapp/README.MD)
 
