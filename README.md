@@ -39,3 +39,8 @@ This will create 2 entries in the sheet. One will be Running 30 mins with x amou
 
 [Nutriapp](/nutriapp/README.MD)
 
+# Flight tracker
+
+This is a basic flight tracker I created while experimenting with APIs. It checks the prices for some destinations I would love to visit and creates alerts for my phone and email.
+
+[Flight Tracker](/flight_tracker/readme.md)
