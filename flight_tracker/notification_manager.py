@@ -8,28 +8,29 @@ from email.message import EmailMessage
 
 class NotificationManager:
     """
-    This class is responsible for sending notifications with flight deal details via SMS and email.
+    Manages the sending of notifications through SMS and email.
 
     Attributes:
-        account_sid (str): Account SID for Twilio.
-        auth_token (str): Authentication token for Twilio.
-        twilio_number (str): Twilio phone number for sending SMS.
-        my_number (str): Recipient phone number for SMS.
-        email (str): Sender email address.
-        email_key (str): Key for email server authentication.
-        email_smtp_server (str): SMTP server for email.
-        client (Client): Twilio client object.
+        account_sid (str): Your Twilio account SID.
+        auth_token (str): Your Twilio authentication token.
+        twilio_number (str): Your Twilio phone number.
+        my_number (str): The phone number to which SMS notifications will be sent.
+        email (str): The email address used for sending notifications.
+        email_key (str): The password or API key for the email account.
+        email_smtp_server (str): The SMTP server for the email account.
+        client (Client): Twilio client for sending SMS.
 
     Methods:
-        send_sms: Sends an SMS with the flight information.
-        send_email: Sends an email with a list of flight offers.
-    """
+        send_sms(flight_information): Sends an SMS with the flight information.
+        send_email(receiver_email, offers): Sends an email to a receiver with a list of offers.
+    """ 
+    
     def __init__(self) -> None:
         self.account_sid = os.environ['TWILIO_ACCOUNT_SID']
         self.auth_token = os.environ['TWILIO_AUTH_TOKEN']
         self.twilio_number = os.environ['TWILIO_NUMBER']
         self.my_number = os.environ['MY_NUMBER']
-        self.email = 'georgios.k.kachrimanis@gmail.com'
+        self.email = os.environ['MY_SECOND_EMAIL']
         self.email_key = os.environ['MY_SECOND_EMAIL_KEY']
         self.email_smtp_server = os.environ['MY_SMTP_SERVER']
         self.client = Client(self.account_sid, self.auth_token)
