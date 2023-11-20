@@ -7,7 +7,7 @@ from datetime import datetime,timedelta
 ORIGIN = 'AMS'
 
 def main():
-    # We get the flights that we have in our list! Keep in mind the free tier is up to 200 requests per month!!!! SO DO NOT DO TOO MANY TESTS :P
+    # We get the flights that we have in our list! 
     
     flights = fs()
     database = dm.DataManager(flight_search=flights)
