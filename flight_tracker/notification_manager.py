@@ -55,6 +55,5 @@ class NotificationManager:
         with smtplib.SMTP(self.email_smtp_server, port=587) as connection:
             connection.starttls()  # Secure the connection with TLS
             connection.login(user=self.email, password=self.email_key)
-            # Send the email with a randomized birthday letter.
             connection.send_message(message)
             

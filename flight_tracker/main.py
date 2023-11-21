@@ -29,6 +29,7 @@ def main():
         if flight['price'] >= results.price:
             offer_text = results.flight_details()
             offers.append(offer_text)
+            # If you want to send sms(I have a trial account so do not want to spend my free tier on 3-4 texts per time I run this), uncomment the next lien!
             # alerts.send_sms(offer_text)
             
     for email in database.get_email_list():
