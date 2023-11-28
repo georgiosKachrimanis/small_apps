@@ -50,3 +50,9 @@ This is a basic flight tracker I created while experimenting with APIs. It check
 Just a simple scrapper of a website that creates a movie list with the top 100 movies according to them.
 
 [Movie Titles Scraper](/movies_scrapper/readme.md)
+
+# Top 100
+
+This application is designed to create a Spotify playlist based on the Billboard Hot 100 songs for a given date. It scrapes the Billboard Hot 100 website for song titles and searches for these songs on Spotify. If found, it adds them to a newly created private Spotify playlist.
+
+[Top 100](/spotify_top_100/top_100.py)
