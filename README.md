@@ -56,3 +56,10 @@ Just a simple scrapper of a website that creates a movie list with the top 100 m
 This application is designed to create a Spotify playlist based on the Billboard Hot 100 songs for a given date. It scrapes the Billboard Hot 100 website for song titles and searches for these songs on Spotify. If found, it adds them to a newly created private Spotify playlist.
 
 [Top 100](/spotify_top_100/top_100.py)
+
+
+# Amazon Price Alert
+
+This script is designed to monitor the price of a specific product on Amazon and send an email alert if the price drops below a predetermined threshold.
+
+[Amazon price Alert](/price_checker/readme.md)
