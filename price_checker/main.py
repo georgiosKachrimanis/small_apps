@@ -36,7 +36,7 @@ def amazon_search(item_url:str):
     soup = BeautifulSoup(response.text, "lxml")
     return soup
 
-def price_check(soup:BaseExceptionGroup, alert_price:float):
+def price_check(soup:BeautifulSoup, alert_price:float):
     """
     Checks the price of a product and sends an email notification if the price is below the alert price.
 
@@ -68,7 +68,9 @@ def send_notifications(email_text:str):
     with smtplib.SMTP(MY_SMTP_SERVER, port=587) as connection:
         connection.starttls()  # Secure the connection with TLS
         connection.login(user=MY_SECONDARY_EMAIL, password=MY_PASSWORD)
-        connection.sendmail(from_addr=MY_SECONDARY_EMAIL,to_addrs=MY_MAIN_EMAIL,msg=f"{SUBJECT}{email_text}")
+        connection.sendmail(from_addr=MY_SECONDARY_EMAIL,
+                            to_addrs=MY_MAIN_EMAIL,
+                            msg=f"{SUBJECT}{email_text}")
 
 
 def main():
@@ -77,7 +79,7 @@ def main():
     product_url = "Clean-Coder-Conduct-Professional-Programmers/dp/0137081073/ref=sr_1_4?keywords=Robert+martin&qid=1701242006&sr=8-4"
     search_results = amazon_search(product_url)
     # Change the maximum price for the product you are looking for
-    maximum_price = 25.00
+    maximum_price = 30.00
     price_check(soup=search_results, alert_price=maximum_price)
     
     

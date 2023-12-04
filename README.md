@@ -63,3 +63,9 @@ This application is designed to create a Spotify playlist based on the Billboard
 This script is designed to monitor the price of a specific product on Amazon and send an email alert if the price drops below a predetermined threshold.
 
 [Amazon price Alert](/price_checker/readme.md)
+
+# Cookie Clicker Bot
+
+This Cookie Clicker Bot is a simple automation script developed in Python, utilizing Selenium WebDriver. It's designed for educational purposes to demonstrate web automation and interaction with web elements. The bot plays the Cookie Clicker game (https://orteil.dashnet.org/experiments/cookie/) by automatically clicking on the cookie and purchasing store upgrades.
+
+[Cookie Clicker](/cookie_clicker/readme.md)
