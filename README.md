@@ -69,3 +69,10 @@ This script is designed to monitor the price of a specific product on Amazon and
 This Cookie Clicker Bot is a simple automation script developed in Python, utilizing Selenium WebDriver. It's designed for educational purposes to demonstrate web automation and interaction with web elements. The bot plays the Cookie Clicker game (https://orteil.dashnet.org/experiments/cookie/) by automatically clicking on the cookie and purchasing store upgrades.
 
 [Cookie Clicker](/cookie_clicker/readme.md)
+
+
+# Real Estate Scraper
+
+This project is a Python-based web scraping tool that automates the process of collecting real estate listings from a website. It uses Selenium for browser automation and BeautifulSoup for parsing HTML content. The scraped data is structured and saved into an Excel file and also entered into a Google Form.
+
+[Real Estate Scraper](/Real_Estate_scraper/readme.md)
