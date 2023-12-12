@@ -33,8 +33,8 @@ def send_rain_alert():
     owm_endpoint = "https://api.openweathermap.org/data/3.0/onecall"
 
     # Coordinates for the city place you want to check.
-    LAT = 
-    LON = 
+    LAT = ""
+    LON = ""
 
     parameters = {
         "lat": LAT,

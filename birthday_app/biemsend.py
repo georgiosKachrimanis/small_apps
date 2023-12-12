@@ -13,11 +13,15 @@ LETTERS_LOCATION = os.path.join(BASE_DIR, "letter_templates", "letter_")
 
 # Email credentials and SMTP server configuration.
 MY_EMAIL = "your email goes here"
-MY_PASSWORD = "the password you will get from your provider goes here!"  # The smtp service providers can create an one time password to use to lod in the email API. You can find more information with some google search!
-MY_SMTP_SERVER = "smtp.gmail.com" # Depending on the email service you are using you must change this!
+# The smtp service providers can create an one time password to use to lod in the email API. 
+# You can find more information with some google search!
+MY_PASSWORD = "the password you will get from your provider goes here!"  
+# Depending on the email service you are using you must change this!
+MY_SMTP_SERVER = "smtp.gmail.com"  
 
 # Email subject line for the birthday message.
 SUBJECT = "Subject:Happy Birthday!\n\n"
+
 
 def email_app(name: str, email: str):
     """Sends a birthday email to the specified recipient.
@@ -30,9 +34,10 @@ def email_app(name: str, email: str):
         connection.starttls()  # Secure the connection with TLS
         connection.login(user=MY_EMAIL, password=MY_PASSWORD)
         # Send the email with a randomized birthday letter.
-        connection.sendmail(from_addr=MY_EMAIL,
-                            to_addrs=email,
-                            msg=f"{SUBJECT}{random_letter(name)}")
+        connection.sendmail(
+            from_addr=MY_EMAIL, to_addrs=email, msg=f"{SUBJECT}{random_letter(name)}"
+        )
+
 
 def random_letter(name: str):
     """Generates a personalized birthday letter for the recipient.
@@ -47,13 +52,14 @@ def random_letter(name: str):
     file_name = f"{LETTERS_LOCATION}{randint(1,3)}.txt"
 
     # Open and read the selected letter template.
-    with open(file_name, 'r') as chosen_letter:
+    with open(file_name, "r") as chosen_letter:
         letter_content = chosen_letter.read()
 
     # Replace the placeholder with the recipient's name.
-    letter = letter_content.replace('[NAME]', name)
+    letter = letter_content.replace("[NAME]", name)
 
     return letter
+
 
 # Get the current date to check against the birthday list.
 today = dt.datetime.now()
@@ -68,6 +74,6 @@ except FileNotFoundError as e:
 # Iterate over the DataFrame to check for birthdays today.
 for index, row in df.iterrows():
     # Check if the current day and month match a birthday in the list.
-    if row['month'] == today.month and row['day'] == today.day:
+    if row["month"] == today.month and row["day"] == today.day:
         # Send an email to users who have a birthday today.
         email_app(row["name"], row["email"])

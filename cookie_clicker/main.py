@@ -5,7 +5,7 @@ import time
 
 # Set Brave's path for macOS. If you are using a different browser, please check the documentation.
 brave_path = "/Applications/Brave Browser.app/Contents/MacOS/Brave Browser"
-ua = UserAgent(os='macos')
+ua = UserAgent(os="macos")
 user_agent = ua.random
 
 # Keep Chrome/Brave window open with custom options.
@@ -19,7 +19,17 @@ driver.get("https://orteil.dashnet.org/experiments/cookie/")
 
 
 # List of store items by their HTML ID.
-STORE_ITEMS = ['buyCursor', 'buyGrandma', 'buyFactory', 'buyMine', 'buyAlchemy lab', 'buyShipment', 'buyTime machine', 'buyElder pledge',]
+STORE_ITEMS = [
+    "buyCursor",
+    "buyGrandma",
+    "buyFactory",
+    "buyMine",
+    "buyAlchemy lab",
+    "buyShipment",
+    "buyTime machine",
+    "buyElder pledge",
+]
+
 
 def get_store_prices():
     """
@@ -33,8 +43,9 @@ def get_store_prices():
     for item in store_elements:
         if item.text:
             prices.append(int(item.text.split()[-1].replace(",", "")))
-    
+
     return prices
+
 
 def buy_store_upgrade(current_cookies: int, current_store_prices: list):
     """
@@ -46,17 +57,18 @@ def buy_store_upgrade(current_cookies: int, current_store_prices: list):
     """
     best_option = None
     max_price = 0
-    
+
     # Iterate through store prices to find the best upgrade option
     for index, price in enumerate(current_store_prices):
         if price <= current_cookies and price > max_price:
             best_option = index
-            max_price = price 
-    
+            max_price = price
+
     # Click on the best upgrade option if it exists and is affordable
     if best_option is not None:
         store_upgrade = driver.find_element(By.ID, value=STORE_ITEMS[best_option])
         store_upgrade.click()
+
 
 def get_cookie_count():
     """
@@ -66,23 +78,26 @@ def get_cookie_count():
     """
     available_cookies = driver.find_element(By.ID, value="money")
     return available_cookies.text.replace(",", "")
-    
+
+
 # Main cookie clicker interaction element.
 cookie_clicker = driver.find_element(By.ID, value="cookie")
 
 # Timers for periodic checks and end of the game.
 five_seconds_check = time.time() + 5
-end_of_game_timer = time.time() + 300 
+end_of_game_timer = time.time() + 300
 
 while True:
     # Click the cookie.
     cookie_clicker.click()
-    
+
     # Every five seconds, check for available upgrades and buy the best one.
     if time.time() > five_seconds_check:
         store_prices = get_store_prices()
         available_cookies = int(get_cookie_count())
-        buy_store_upgrade(current_cookies=available_cookies, current_store_prices=store_prices)
+        buy_store_upgrade(
+            current_cookies=available_cookies, current_store_prices=store_prices
+        )
         five_seconds_check = time.time() + 5
 
     # End the game after a specified duration and print cookies per second.

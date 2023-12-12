@@ -13,10 +13,16 @@ blog_posts = []
 response = requests.get(blog_url).json()
 
 for post in response:
-    post_obj = Post(post_id=post['id'], title=post['title'], subtitle=post['subtitle'], body=post['body'])
+    post_obj = Post(
+        post_id=post["id"],
+        title=post["title"],
+        subtitle=post["subtitle"],
+        body=post["body"],
+    )
     blog_posts.append(post_obj)
 
-@app.route('/')
+
+@app.route("/")
 def home():
     """Render the homepage of the blog.
 
@@ -26,7 +32,8 @@ def home():
     """
     return render_template("index.html", all_blog_posts=blog_posts, year=current_year)
 
-@app.route('/post/<int:blog_id>')
+
+@app.route("/post/<int:blog_id>")
 def get_post(blog_id):
     """Render a specific blog post page.
 
@@ -37,7 +44,7 @@ def get_post(blog_id):
         A rendered HTML template ('post.html') for the specific blog post
         and the current year.
     """
-    return render_template('post.html', post=blog_posts[blog_id-1], year=current_year)
+    return render_template("post.html", post=blog_posts[blog_id - 1], year=current_year)
 
 
 if __name__ == "__main__":
