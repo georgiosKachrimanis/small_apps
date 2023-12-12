@@ -76,3 +76,10 @@ This Cookie Clicker Bot is a simple automation script developed in Python, utili
 This project is a Python-based web scraping tool that automates the process of collecting real estate listings from a website. It uses Selenium for browser automation and BeautifulSoup for parsing HTML content. The scraped data is structured and saved into an Excel file and also entered into a Google Form.
 
 [Real Estate Scraper](/Real_Estate_scraper/readme.md)
+
+# Blog reader
+
+This repository contains the code for a simple but dynamic blog website built using the Flask web framework, APIs and HTML/CSS. The application allows users to view a list of blog posts and read individual posts in detail.
+
+[Blog Server](/blog/readme.md)
+
