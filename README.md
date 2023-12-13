@@ -83,3 +83,9 @@ This repository contains the code for a simple but dynamic blog website built us
 
 [Blog Server](/blog/readme.md)
 
+# Bootstrap Training
+
+Took a bit of a break from Python and tried to remember the basics of Web Design. So I followed one simple guide to create a basic website using bootstrap. Is about a tinder for dogs...No idea why the instructor wanted to make something like that but it was fun and easy to create!
+[TinDog](/Bootstrap%20training/tinDog/index.html)
+
+
