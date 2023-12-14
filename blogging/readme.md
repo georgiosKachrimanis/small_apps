@@ -55,7 +55,7 @@ Georgio's Blog is a Flask-based web application designed for a musician-turned-c
 1. Clone the Repository (if applicable)
 - If the application is hosted in a Git repository, first clone it to your local machine:
 
-    `git clone`
+    `git clone https://github.com/georgiosKachrimanis/small_apps`
 
     `cd blogging`
 
