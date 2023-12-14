@@ -19,9 +19,8 @@ A simple flashcards application built using `tkinter` for GUI and `pandas` for d
 1. Clone the repository.
 2. Navigate to the directory where the script is located.
 3. Run the script:
-    ```bash
-    python3 wordcard.py
-    ```
+
+    `python3 wordcard.py`
 
 ## How it Works
 
