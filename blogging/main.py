@@ -1,8 +1,8 @@
-from flask import Flask
-from flask import render_template
+from flask import Flask, render_template, request
 import datetime
 import requests
 from post import Post
+from mail import Mail
 
 
 app = Flask(__name__)
@@ -14,9 +14,9 @@ def retrieve_posts_list():
     """
     Retrieves a list of blog posts from a specified URL.
 
-    This function sends a GET request to the blog's API endpoint, parses the JSON response,
-    and creates a list of Post objects with attributes such as post ID, title, subtitle,
-    author, date, and body content.
+    This function sends a GET request to the blog's API endpoint, parses the
+    JSON response,and creates a list of Post objects with attributes such
+    as post ID, title, subtitle, author, date, and body content.
 
     Returns:
         list: A list of Post objects, each representing a blog post.
@@ -88,7 +88,7 @@ def post(blog_id):
     """
     Renders a specific blog post based on its ID.
 
-    This function retrieves the list of all posts and selects the one matching 
+    This function retrieves the list of all posts and selects the one matching
     the given ID.
     The selected post is then passed to the 'post.html' template for rendering.
 
@@ -101,6 +101,26 @@ def post(blog_id):
     posts = retrieve_posts_list()
     print(posts)
     return render_template("post.html", post=posts[int(blog_id) - 1])
+
+
+@app.route("/receive", methods=["POST"])
+def receive_message():
+    error = None
+    if request.method == "POST":
+        new_email = Mail(
+            name=request.form["name"],
+            email=request.form["email"],
+            phone=request.form["phone"],
+            message=request.form["message"],
+        )
+        new_email.send_email()
+        return render_template(
+            "contact.html", text="Your message was received.", redirected_page=True
+        )
+
+    return render_template(
+        "contact.html", text=f"There was an Error. {error}", redirected_page=True
+    )
 
 
 if __name__ == "__main__":
