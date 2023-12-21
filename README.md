@@ -88,4 +88,10 @@ This repository contains the code for a simple but dynamic blog website built us
 Took a bit of a break from Python and tried to remember the basics of Web Design. So I followed one simple guide to create a basic website using bootstrap. Is about a tinder for dogs...No idea why the instructor wanted to make something like that but it was fun and easy to create!
 [TinDog](/Bootstrap%20training/tinDog/index.html)
 
+# Movie Library
+This Flask web application is a movie library system where users can add, view, edit, and delete movie entries. 
+It utilizes Flask for the backend, integrates with The Movie Database (TMDb) API for movie data, and uses Flask-Bootstrap for styling.
+
+[Movie Library](/movie_library/readme.md)
+
 
