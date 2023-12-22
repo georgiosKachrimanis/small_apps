@@ -95,3 +95,8 @@ It utilizes Flask for the backend, integrates with The Movie Database (TMDb) API
 [Movie Library](/movie_library/readme.md)
 
 
+# Just a small fun website designed in Canva.
+
+I was following a coding course and they showed us how to play with Canva. This is the result.
+
+[Hotel Pissia](https://hotelpissia.my.canva.site/pissiahotel#contact-us)
