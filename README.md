@@ -100,3 +100,10 @@ It utilizes Flask for the backend, integrates with The Movie Database (TMDb) API
 I was following a coding course and they showed us how to play with Canva. This is the result.
 
 [Hotel Pissia](https://hotelpissia.my.canva.site/pissiahotel#contact-us)
+
+# Create your own blog post
+Create your own Blog is a Flask-based blogging application featuring a clean and minimalist design. It allows users to create, view, edit, and delete blog posts. The application integrates Bootstrap for responsive design and Flask-WTForms for secure form handling.
+
+*This code is not safe to be used in production. It is intended solely for educational purposes. There are no precautions for cyberattacks whatsoever. Users are advised to implement additional security measures for any production use.*
+
+[Create Your Own Blog Post](/create_your_own_blog/readme.md)
